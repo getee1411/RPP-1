@@ -1,0 +1,86 @@
+class circle{
+    constructor(r){
+        this.radius=r
+    }
+
+    keliling = () => {
+        return 3.14 * 2 * this.radius
+    }
+
+    luas = () => {
+        return 3.14 * this.radius ** 2
+    }
+}
+
+
+class tabung extends circle{
+    constructor(r, t){
+        super(r)
+        this.h = t
+    }
+
+    luasS = () => {
+        return this.keliling() * this.h
+    }
+
+    luasP = () => {
+        return this.keliling() * (this.radius + this.h)
+    }
+
+    V = () => {
+        return this.luas() * this.h
+    }
+}
+
+let a = new tabung(7.5, 50);
+console.log("--TABUNG--");
+console.log("Luas Selimut = " + a.luasS() + " cm2");
+console.log("Luas Permukaan = " + a.luasP() + " cm2");
+console.log("Volume = " + a.V() + " cm3");
+
+class kerucut extends circle{
+    constructor(r, t, s){
+        super(r)
+        this.h = t
+        this.s = s
+    }
+
+    luasS = () => {
+        return 3.14 * this.radius * this.s
+    }
+
+    luasP = () => {
+        return this.luasS() + this.luas()
+    }
+
+    V = () => {
+        return this.h * this.luas() / 3
+    }
+}
+
+let b = new kerucut(10, 40, 41)
+console.log("")
+console.log("--KERUCUT--")
+console.log("Luas Selimut = " + b.luasS() + " cm2")
+console.log("Luas Permukaan = " + b.luasP() + " cm2")
+console.log("Volume = " + b.V() + " cm3")
+
+class ball extends circle{
+    constructor(r, t){
+        super(r)
+    }
+
+    luasP = () => {
+        return this.luas() * 4
+    }
+
+    V = () => {
+        return 4/3 * 3.14 * this.radius ** 3
+    }
+}
+
+let c = new ball(15)
+console.log("")
+console.log("--BOLA--")
+console.log("Luas Permukaan = " + c.luasP() + " cm2")
+console.log("Volume = " + c.V() + " cm3")
