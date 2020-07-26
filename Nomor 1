@@ -1,0 +1,13 @@
+class tanah{
+    constructor(p,l){
+        this.panjang = p
+        this.lebar = l
+    }
+
+    harga = () =>{
+        return this.panjang * this.lebar * 1500000
+    }
+}
+
+let total = new tanah(20.5,30)
+console.log("Total = Rp" + (total.harga() + (total.harga() * 15 / 100)));
