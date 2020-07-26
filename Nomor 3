@@ -1,0 +1,15 @@
+function a(bb, bt) {
+    let n = bb / Math.pow(bt, 2)
+    
+    if (n < 18.5)
+    return ("BMI anda = " + n + ", Anda memiliki kekurangan BMI!")
+    if (n >= 18.5 && n <= 24.9)
+    return ("BMI anda = " + n + ", Anda memiliki BMI ideal!")
+    if (n >= 25 && n<= 29)    
+    return ("BMI anda = " + n + ", Anda memiliki kelebihan BMI!")
+    if (n >= 30)
+    return ("BMI anda = " + n + ", Anda kegemukan!")
+}
+console.log("Tinggi = 170 cm")
+console.log("Berat = 90 kg")
+console.log(a(90, 1.7))
